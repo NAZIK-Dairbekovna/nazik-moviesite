@@ -15,10 +15,14 @@ const ActorsDetail = () => {
                 <div className="actors-detail">
                     {
                         movies.map(el => (
-                            <h1>{el.title}</h1>
+                            <div>
+                                <h1>{el.title}</h1>
+                                <h2>{el.release_date}</h2>
+                            </div>
                         ))
                     }
                 </div>
+
             </div>
         </div>
     );
