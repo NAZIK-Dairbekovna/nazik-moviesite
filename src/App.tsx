@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {Route, Routes} from "react-router-dom";
+import NowPlaying from "./components/Now Playing/NowPlaying";
+import Popular from "./components/Popular/Popular";
+import TopRated from "./components/TopRated/TopRated";
+import Upcoming from "./components/Upcoming/Upcoming";
+import Home from "./components/Home/Home";
+import MovieDetail from "./components/pages/MovieDetail/MovieDetail";
+import ActorsDetail from "./components/pages/ActorsDetail/ActorsDetail";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Routes>
+            <Route path={'/'} element={<Home/>}/>
+            <Route path={'/NowPlaying'} element={<NowPlaying/>}/>
+            <Route path={'/Popular'} element={<Popular/>}/>
+            <Route path={'/TopRated'} element={<TopRated/>}/>
+            <Route path={'/Upcoming'} element={<Upcoming/>}/>
+            <Route path={'/movieDetail/movie-info/:movieId'} element={<MovieDetail/>}/>
+            <Route path={'/actorDetail/actor-info/:actorId'} element={<ActorsDetail/>}/>
+        </Routes>
     </div>
   );
 }
